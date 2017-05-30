@@ -9,10 +9,10 @@ var orm = {
 			cb(result);
 		});
 	},
-	insertOne: function(table, inputValue, cb){
-		var queryString = "INSERT INTO "+table+"(burger_name) ";
-		queryString+="VALUE ("+ inputValue + ");";
-		connection.query(queryString, function(err, result){
+	insertOne: function(table, input, cb){
+		var queryString = "INSERT INTO "+ table +" (burger_name) VALUES (?);";
+		
+		connection.query(queryString, [input],  function(err, result){
 			if (err) throw err;
 
 			cb(result);

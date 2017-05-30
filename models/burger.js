@@ -6,7 +6,7 @@ var burger = {
 			cb(data);
 		})
 	},
-	create: function(cb, inputValue){
+	create: function(inputValue, cb){
 		orm.insertOne("burgers", inputValue, function(data){
 			cb(data);
 		})

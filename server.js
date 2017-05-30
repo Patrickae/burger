@@ -10,7 +10,8 @@ app.use(express.static(process.cwd() + "/public"));
 
 
 
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
 
 // Override with POST having ?_method=DELETE
 app.use(methodOverride("_method"));
