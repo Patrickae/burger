@@ -28,6 +28,17 @@ router.post("/", function(req, res){
 	burger.create(req.body.input, function(){
 		res.redirect("/");
 	})
-})
+});
+
+
+router.put("/:id", function(req, res) {
+  var id = req.params.id;
+
+  console.log(id);
+
+  burger.update("devoured",true, id, function(){
+  	res.redirect("/");
+  })
+});
 
 module.exports = router;

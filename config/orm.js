@@ -21,8 +21,8 @@ var orm = {
 	},
 	updateOne: function(table, columnName, inputValue, valueId, cb){
 		var queryString = "UPDATE "+table+" SET "+columnName+" = "+inputValue;
-		queryString += "WHERE id="+valueId;
-		conection.query(queryString, function(err, result){
+		queryString += " WHERE id= "+valueId;
+		connection.query(queryString, function(err, result){
 			if (err) throw err;
 
 			cb(result);

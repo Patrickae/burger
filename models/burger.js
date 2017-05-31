@@ -12,7 +12,7 @@ var burger = {
 		})
 
 	},
-	update: function(columnName, inputValue, valueID, cb){
+	update: function(columnName, inputValue, valueId, cb){
 		orm.updateOne("burgers", columnName, inputValue, valueId, function(data){
 			cb(data)
 		})

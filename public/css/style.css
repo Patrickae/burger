@@ -1,3 +1,7 @@
 img{
 	margin-top:20px;
 }
+
+button{ float: right; }
+
+.container{margin-bottom:40px;}

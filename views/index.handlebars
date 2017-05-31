@@ -2,13 +2,39 @@
 </img>
 <h1 class = "text-center">Eat Da Burger!</h1>
 
-<ol>
-{{#each burger}}
-	<li>{{this.burger_name}} </li>
-{{/each}}
-</ol>
+
+<div class= "col-md-12">
+
+	<div class = "col-md-6">
+		{{#each burger}}
+		{{#unless this.devoured}}
+		<div class = "well">
+		
+			<p> {{this.id}}. {{this.burger_name}}</p>
+			
+			<form action="/{{this.id}}?_method=PUT" method="POST">
+         	 <input type="hidden" name="devoured" value="false">
+        	  <button type="submit" class = "btn btn-success">Devour</button>
+       		 </form>
+			</div>
 
 
+		{{/unless}}
+		{{/each}}
+	</div>
+
+	<div class = "col-md-6">
+		{{#each burger}}
+		{{#if this.devoured}}
+		<div class = "well">
+			<p> {{this.id}}. {{this.burger_name}}
+			</p>
+			</div>
+		{{/if}}
+		{{/each}}
+	</div>
+
+</div>
 
 
 
